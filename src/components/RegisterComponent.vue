@@ -1,10 +1,10 @@
 <template>
   <div class="register-component">
-    <section class="conteiner">
+    <section class="container">
       <div class="intro-img">
-      <img src="../assets/img/logo.jpg" alt="">
+        <img src="../assets/img/logo.jpg" alt="">
       </div>
-      <form action="#" onsubmit="return false">
+      <form class ="form-user" action="#" onsubmit="return false">
         <label for="input-teste-1">Usuário *</label>
         <input v-model="login.user" type="text" id="input-teste-1">
         <label for="input-teste-2">Password *</label>

@@ -1,58 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@400;700&display=swap');
 
-*{
-    box-sizing: border-box;
-    outline: 0;
-}
-body{
-    margin: 10rem;
+
+customers-component > body{
+    margin: 0rem 10rem 0rem 10rem ;
     padding: 0;
-    background: rgb(37, 37, 37);
+    background: rgb(8, 8, 8);
     font-family: 'Open sans', sans-serif;
     font-size: 1.3em;
     line-height:2em;
+    
 }
-.conteiner{
-    max-width: 1500px;
-    margin:1rem ;
+.container{
+    max-width: 800px;
+    margin:10rem ;
     background: rgb(255, 255, 255);
     padding:2rem;
     border-radius: 10px;
     text-align: left;
-    width:100%;
-    /*text-align: left;*/
-}
-/*.tabela{
-    border:1px solid rgb(0, 0, 0);
-    padding:10px;
-    text-align: left;
-    width: 900px;
-    /*background-color: rgb(128, 124, 124);
-}*/
-.cabeçalho{
-    background-color: rgb(102, 101, 101); 
-    color:white;
-    padding: 20px;
 }
 
-
-table td, table th{
-    border:1px solid black;
+.table-dados td, .table-dados th{
+    border : 1px solid rgb(0, 0, 0);
     padding:5px;
     text-align: left;
+    
+    
 }
-.tabela {
-    border-collapse: collapse;
-    width: 800px;
-    margin-bottom: 1rem;
-    text-align: left;
-    width: 70%;
-    overflow-x: scroll;
-    overflow-x:auto;
-    overflow:hidden;
+.table-dados{
+    border-collapse:collapse;
+    width:80%;
+    background: rgb(233, 233, 233);
+    color: black;
+    
 }
 
-button{
+.add-lead{
     border: none;
     background: rgb(1, 155, 245);
     color: rgb(255, 255, 255);
@@ -68,12 +50,12 @@ button{
     width: 20%;
 }
 
-button:hover{
+.add-lead:hover{
     background: rgb(19, 116, 226)
 }
 
 img{
-    width: 30%;
+    width: 50%;
     overflow-x: scroll;
     overflow-x:auto;
     overflow:hidden;

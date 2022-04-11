@@ -1,14 +1,14 @@
 <template>
   <div class="customers-component">
-    <section class="conteiner">
+    <section class="container">
         <div>
           <img src="../assets/img/logo.jpg" alt="">
         </div>
-        <button>Novo Lead(+)</button>
+        <button class="add-lead" @click="showModal()" >Novo Lead(+)</button>
         <div>
           <h1>Painel de Leads</h1>
-          <table class="tabela">
-            <thead class="cabeçalho">
+          <table class="table-dados">
+            <thead >
               <tr >
                 <th >Cliente em Potencial</th>
                 <th>Dados Confirmados</th>
@@ -59,10 +59,15 @@ export default {
   methods: {
     closeModal() {
       this.modal.isVisible = false;
+      console.log(this.modal.isVisible);
     },
     updateTable() {
         //MÉTODO PARA ATUALIZAR OS NOVOS REGISTROS DO LOCALSTORAGE PARA A TABELA
+    },
+    showModal(){
+      this.modal.isVisible=true;
     }
+
   },
   created(){
     // LER LOACLSTORAGE E ATUALIZAR A VARIÁVEL CUSTOMERS ( this.updateTable())
@@ -87,6 +92,7 @@ export default {
       }
     ]
   }
+
 };
 </script>
 

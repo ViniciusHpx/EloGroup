@@ -1,42 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@400;700&display=swap');
-:root{
-    --primary-color: rgb(17,86,102);
-    --primary-color-darker: rgb(10, 49, 58);
-}
-*{
-    box-sizing: border-box;
-    outline: 0;
-}
-body{
+
+register-component > body{
     margin: 0;
     padding: 0;
-    background: rgb(37, 37, 37);
+    width: 50%;
+    background: rgb(44, 44, 44);
     font-family: 'Open sans', sans-serif;
     font-size: 1.3em;
     line-height:1.5em;
 }
-.conteiner{
-    max-width: 640px;
-    margin:5rem auto;
-    background: white;
-    padding:2rem;
+.container{
+    background: rgb(255, 255, 255);
     border-radius: 10px;
+    text-align: left;
 }
 
-form input, form label, form button{
+.form-user input, .form-user label, .form-user button{
     display: block;
-    width:100%;
+    width:60%;
     margin-bottom: 10px;
+    text-align: left;
 }
-form input{
+.form-user input{
+    text-align: left;
     font-size: 24px;
     height: 50px;
     padding: 0 20px;
 }
-form input:focus{
-    outline: 1px solid var(--primary-color);
-}
-form button{
+.form-user button{
     border: none;
     background: rgb(202, 199, 199);
     color: black;
@@ -45,8 +36,9 @@ form button{
     height: 50px;
     cursor: pointer;
     margin-top: 4rem;
+    text-align: center;
 }
-form button:hover{
+.form-user button:hover{
     background: rgb(139, 138, 138);
 }
 
@@ -73,5 +65,4 @@ li:before {
     transition: all .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.is_valid { color: rgba(136, 152, 170, 0.8); }
-.is_valid:before { width: 100%; }
+
