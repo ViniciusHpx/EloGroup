@@ -9,22 +9,24 @@ body{
     line-height:1.5em;
     width: 100%;
 }
-.container{
-    max-width: 50%;
-    height: 50%;
+
+.modal-container{
     margin:5rem auto;
     background: rgb(255, 255, 255);
     padding:2rem;
     border-radius: 10px;
+    height: 85%;
+    width: 50%;
 }
-.container-tree{
+
+.modal-container-tree{
     display: flex;
     padding: 0px;
     margin-top: 20px;
     width: 100%;
     text-align: left;
 }
-.container-two{
+.modal-container-two{
     width:60%;
     margin-left: 50px;
     padding: 0px;

@@ -1,10 +1,11 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop">
-      <div class="modal"
+      <div class="message-modal"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
+        v-bind:style="'max-width:'+width+';'"
       >
         <header
           class="modal-header"
@@ -13,7 +14,6 @@
           <slot name="header">
             <b v-bind:style="'color:'+color+';'">{{title}}</b>
           </slot>
-          
         </header>
 
         <section
@@ -28,7 +28,8 @@
         <footer class="modal-footer">
           <button
             type="button"
-            class="btn-green"
+            class="close-btn"
+            v-bind:style="'background-color:'+color+';'"
             @click="close"
             aria-label="Close modal"
           >
@@ -57,6 +58,10 @@
         type: String,
         default: "green"
       },
+      width: {
+        type: String,
+        default: "390px"
+      }
     },
     methods: {
       close() {
@@ -67,7 +72,18 @@
   };
 </script>
 
-<style>
+<style >
+  .close-btn{
+    color: white;
+    font-size: 18px;
+    font-weight: 70;
+    height: 40px;
+    width:100%;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  .close-btn:hover{
+  }
 
   #link{
       color: black;
@@ -89,7 +105,7 @@
     align-items: center;
   }
 
-  .modal {
+  .message-modal {
     background: #FFFFFF;
     box-shadow: 2px 2px 20px 1px;
     overflow-x: auto;
@@ -149,4 +165,6 @@
   .modal-fade-leave-active {
     transition: opacity .5s ease;
   }
+  
+  
 </style>
