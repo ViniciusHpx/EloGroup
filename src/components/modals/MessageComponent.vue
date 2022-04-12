@@ -111,6 +111,7 @@
     overflow-x: auto;
     display: flex;
     flex-direction: column;
+    padding: 10px;
   }
 
   .modal-header,

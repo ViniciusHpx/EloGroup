@@ -1,7 +1,7 @@
 <template>
   <div class="leads">
     
-    <section class="container">
+    <section class="container-leads">
       <div>
         <img src="@/assets/img/logo.jpg" alt="">
       </div>
@@ -78,6 +78,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  @import '@/assets/styles/style.css';
   @import '@/assets/styles/leads-styles.css';
 </style>
 

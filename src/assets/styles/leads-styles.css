@@ -1,36 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@400;700&display=swap');
 
-
-customers-component > body{
-    margin: 0rem 10rem 0rem 10rem ;
-    padding: 0;
-    background: rgb(8, 8, 8);
-    font-family: 'Open sans', sans-serif;
-    font-size: 1.3em;
-    line-height:2em;
-    
-}
-.container{
+.container-leads{
     max-width: 800px;
-    margin:10rem ;
+    margin: 5rem auto ;
     background: rgb(255, 255, 255);
     padding:2rem;
     border-radius: 10px;
     text-align: left;
 }
 
-.table-dados td, .table-dados th{
+.interactive-table td, .interactive-table th{
     border : 1px solid rgb(0, 0, 0);
     padding:5px;
     text-align: left;
-    
-    
 }
-.table-dados{
+.interactive-table{
     border-collapse:collapse;
     width:80%;
-    background: rgb(233, 233, 233);
+    background: rgb(255, 255, 255);
     color: black;
+    align-items: center;
     
 }
 
@@ -54,9 +43,4 @@ customers-component > body{
     background: rgb(19, 116, 226)
 }
 
-img{
-    width: 50%;
-    overflow-x: scroll;
-    overflow-x:auto;
-    overflow:hidden;
-}
+

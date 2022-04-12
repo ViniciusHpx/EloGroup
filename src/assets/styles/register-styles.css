@@ -1,3 +1,4 @@
+/*
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@400;700&display=swap');
 
 register-component > body{
@@ -64,5 +65,67 @@ li:before {
     display: block;
     transition: all .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+*/
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@400;700&display=swap');
 
+.container-register{
+    max-width: 640px;
+    margin:5rem auto;
+    background: white;
+    padding:2rem;
+    border-radius: 10px;
+}
+
+.form-user input, .form-user label, .form-user button{
+    display: block;
+    width:100%;
+    margin-bottom: 10px;
+}
+.form-user input{
+    font-size: 24px;
+    height: 50px;
+    padding: 0 20px;
+}
+.form-user input:focus{
+    outline: 1px solid var(--primary-color);
+}
+.form-user button{
+    border: none;
+    background: rgb(202, 199, 199);
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 4rem;
+}
+.form-user button:hover{
+    background: rgb(139, 138, 138);
+}
+
+.form-user .is_valid { color: rgba(136, 152, 170, 0.8); }
+.form-user .is_valid:before { width: 100%; }
+
+.form-user li { 
+	margin-bottom: 8px;
+	color: #525f7f;
+	position: relative;
+}
+
+.form-user li:before {
+  content: "";
+	width: 0%; height: 2px;
+	background: #2ecc71;
+	position: absolute;
+	left: 0; top: 50%;
+	display: block;
+	transition: all .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.form-user ul {
+	padding-left: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}

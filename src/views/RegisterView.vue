@@ -1,6 +1,6 @@
 <template>
   <div class="register">
-    <section class="container">
+    <section class="container-register">
       <div class="intro-img">
         <img src="@/assets/img/logo.jpg" alt="">
       </div>
@@ -24,18 +24,18 @@
 
         <!--<MessageComponent msg="Welcome to Customers!"/>-->
 
-        <MessageComponent
-          v-show="modal.isVisible"
-          @close="closeModal"
-          :title="modal.title"
-          :message="modal.message"
-          :color="modal.color"
-        >
-        </MessageComponent>
-
-      </form>
+      </form> 
     </section>
   </div>
+  
+    <MessageComponent
+      v-show="modal.isVisible"
+      @close="closeModal"
+      :title="modal.title"
+      :message="modal.message"
+      :color="modal.color"
+    >
+  </MessageComponent>
 </template>
 
 <script>
@@ -142,4 +142,5 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style >
   @import '@/assets/styles/register-styles.css';
+  
 </style>
