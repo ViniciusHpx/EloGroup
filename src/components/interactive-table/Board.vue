@@ -11,6 +11,7 @@
 </template>
 
 <script>
+// salvando os metodos que estão dentro da classe Storage dentro do arquivo js
 const Storage = require('@/assets/js/storage.js');
 
 export default {
@@ -30,10 +31,10 @@ export default {
       this.$emit('update');
     },
     drop(e){
-
+      // obtendo o id atraves de uma transferência de dados usando getData
       const card_id = e.dataTransfer.getData('card_id');
       const last_board_id = e.dataTransfer.getData('board_id');
-
+      //aqui pegamos o elemento do cartão
       let card = document.getElementById(card_id);
       
       if(e.target){
@@ -50,21 +51,21 @@ export default {
           this.$emit('errorMessage');
           //EXIBIR MENSAGEM DE ERRO FALANDO QUE NÃO PODE VOLTAR
         } else {
-          // O cara mudou de posição definitivamente
+          //Mudou de posição definitivamente
           card.id = card_id_arr[0] + '-c-'+ board_id_arr[2];
           let _id = e.dataTransfer.getData('_id');
           this.updatePosition(_id, board_id_arr[2]);
         }
 
         board.appendChild(card);
-        // CHAMAR FUNÇÃO QUE ATUALIZA A SITUAÇÃO DO CARA ATUAL
+        // CHAMAR FUNÇÃO QUE ATUALIZA A SITUAÇÃO DO ATUAL
       } 
     }
   },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 
 </style>

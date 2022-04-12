@@ -21,6 +21,7 @@
           id="modalDescription"
         >
           <slot name="body" >
+            <!--Interpreta 'message' como html-->
             <div v-html="message"></div>
           </slot>
         </section>
@@ -44,6 +45,7 @@
 
 <script>
   export default {
+    // variaveis que iremos utilizar dentro do messagecomponent
     name: 'MessageComponent',
     props: {
       title: {
