@@ -4,7 +4,7 @@
     class="board-component"
     @dragover.prevent
     @drop.prevent="drop"
-    style="height:90px;"
+    style="height:90px; width: 220px;"
   >
     <slot/>
   </div>

@@ -3,7 +3,7 @@
 
     <main class="flexbox">
       <table class="tabela">
-
+        
         <thead class="cabeçalho">
           <tr >
             <th v-for="(header, index) in headers" :key="index">{{header}}</th>
@@ -18,7 +18,7 @@
                 @update="updateTable"
                 @errorMessage="errorMessage"
               >
-                <Card 
+                <Card
                   v-if="item.pos == column"
                   v-bind:html_id="row + '-c-' + column"
                   :draggable="true"
@@ -74,6 +74,46 @@ export default {
     box-sizing: border-box;
   }
 
+  .tabela {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .tabela thead tr {
+    background-color: #332e2b;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tabela th,
+.tabela td {
+    padding: 12px 15px;
+}
+
+.tabela tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tabela tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.tabela tbody tr:last-of-type {
+    border-bottom: 2px solid #332e2b;
+}
+
+.tabela tbody tr.active-row {
+    font-weight: bold;
+    color: #332e2b;
+}
+
+  .tabela td{
+    padding: 0px;
+  }
+
   body {
     background-color: #F3F3F3;
   }
@@ -84,7 +124,6 @@ export default {
 
     width: 100%;
     max-width: 768px;
-    height: 100vh;
 
     overflow: hidden;
 

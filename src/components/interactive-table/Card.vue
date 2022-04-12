@@ -6,7 +6,8 @@
     @dragstart="dragStart"
     @dragend="dragEnd"
     @dragover.stop
-  > {{name}}
+    style="padding: 10px 15px; text-align: center; font-weight: bold;}"
+  >{{name}}
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@400;700&display=swap');
 
 .container-leads{
-    max-width: 800px;
+    max-width: 1000px;
     margin: 5rem auto ;
     background: rgb(255, 255, 255);
     padding:2rem;
@@ -14,13 +14,11 @@
     padding:5px;
     text-align: left;
 }
+
 .interactive-table{
     border-collapse:collapse;
-    width:80%;
-    background: rgb(255, 255, 255);
     color: black;
     align-items: center;
-    
 }
 
 .add-lead{

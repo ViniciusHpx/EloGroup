@@ -6,15 +6,14 @@
         <img src="@/assets/img/logo.jpg" alt="">
       </div>
       <button class="add-lead" @click="showLeadModal()" >Novo Lead(+)</button>
-      <div>
+
         <h1>Painel de Leads</h1>
-          <Table
-            :headers="headers" 
-            :data="leads"
-            @update="updateTable"
-            @errorMessage="errorMessage"
-          ></Table>
-      </div>
+        <Table
+          :headers="headers" 
+          :data="leads"
+          @update="updateTable"
+          @errorMessage="errorMessage"
+        ></Table>
 
       <MessageComponent
         v-show="errorVisible"
