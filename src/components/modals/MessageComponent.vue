@@ -45,7 +45,7 @@
 
 <script>
   export default {
-    // variaveis que iremos utilizar dentro do messagecomponent
+    // Váriaveis utilizadas dentro dos metodos e da página atual
     name: 'MessageComponent',
     props: {
       title: {

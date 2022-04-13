@@ -6,16 +6,15 @@
         <img src="@/assets/img/logo.jpg" alt="">
       </div>
       <button class="add-lead" @click="showLeadModal()" >Novo Lead(+)</button>
-
         <h1>Painel de Leads</h1>
-        <!--Componetes que estão sendo usados na tela-->
+        <!--Componente para exibir dinâmicamente a tabela de leads-->
         <Table
           :headers="headers" 
           :data="leads"
           @update="updateTable"
           @errorMessage="errorMessage"
         ></Table>
-      <!--Componetes que estão sendo usados caso haja erro ao arrastar as empresas para um lugar que não é permitido-->
+      <!--Componente para exibir dinâmicamente uma mensagem personalizada-->
       <MessageComponent
         v-show="errorVisible"
         @close="errorVisible = false"
@@ -24,7 +23,7 @@
         color="red"
       >
       </MessageComponent>
-      <!--Componetes que estão sendo usados no momento de adicionar outra lead-->
+      <!--Componente para exibir a tela de cadastro de uma empresa-->
       <NewLeadComponent
         v-show="leadModalVisible"
         @close="leadModalVisible = false"
@@ -53,33 +52,31 @@ export default {
     props: {
         msg: String
     },
-    // variaveis utilizadas dentro dos metodos e da página atual
+    // Váriaveis utilizadas dentro dos metodos e da página atual
     leadModalVisible: false,
     errorVisible: false,
     leads: Storage.getLeads(),
     headers: ['Cliente em Potencial','Dados Confirmados','Reunião Agendada']
   }),
   methods: {
-    showLeadModal(){
-      //Mostra painel de Leads
+    showLeadModal() {
+      // Exibir painel de cadastro de Leads
       this.leadModalVisible=true;
     },
     updateTable() {
-      //fazendo update na tabela do leads
+      // Fazendo update da tabela do leads
       this.leads = Storage.getLeads();
     },
     cardError() {
-      // Mostra um modal 
+      // Mostra um modal de erro 
       this.invokeModal("red","Erro","Não é possível mover um card para uma coluna anterior.");
     },
     errorMessage() {
       this.errorVisible = true;
-      
     }
   }
 };
 </script>
-
 
 <style scoped>
   @import '@/assets/styles/style.css';

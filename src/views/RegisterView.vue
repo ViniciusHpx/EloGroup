@@ -46,10 +46,10 @@ export default {
     MessageComponent
   },
   data: () => ({
+    // Váriaveis utilizadas dentro dos metodos e da página atual
     props: {
         msg: String
     },
-    // variaveis utilizadas dentro dos metodos e da página atual
     login: {
         user: '',
         pass: '',
@@ -71,18 +71,18 @@ export default {
   }),
   methods: {
     closeModal() {
-      // fecha o modal 
+      // Fecha o modal 
       this.modal.isVisible = false;
     },
     invokeModal(color,title,message) {
-      // invocando modal com a determinada mensagem , sucesso ou erro.
+      // Invocando modal com a determinada mensagem, sucesso ou erro.
       this.modal.color=color;
       this.modal.title=title;
       this.modal.message=message;
       this.modal.isVisible = true;
     },
     resetForm(){
-      // reseta formulario 
+      // Reseta formulario 
       this.login = {
           user: '',
           pass: '',
@@ -97,8 +97,8 @@ export default {
       }
     },
     registrar(){
-      //Aqui eu farei a analise da senha e salvar quais erros foram identificados 
-      //ou melhor dizendo condições não atendidas na hora de criar a senha 
+        // Método para realizar a ánalise da senha e exibir eventuais erros para o usuário
+      
         let erros = []
 
         if(this.login.pass != this.login.pass2)
@@ -113,7 +113,7 @@ export default {
         if(erros.length > 0){
           this.invokeModal("red","Erro",erros.join('<br>'));
         } else {
-          //utilizando o metodo de add no local storage que foi definido dentro do meu arquivo storage.js 
+          // Salvano credencias do usuário no localStorage 
           Storage.addUser({
             user: this.login.user,
             pass: this.login.pass
@@ -123,7 +123,7 @@ export default {
         }
     },
     checkPassword() {
-      // setando as variaveis boleanas para fazer a configuração no css
+      // Fazendo validações individuais para a exibição via CSS
       const special_chars = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
 
       this.validation.has_number = /\d/.test(this.login.pass);
@@ -148,5 +148,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style >
   @import '@/assets/styles/register-styles.css';
-  
 </style>

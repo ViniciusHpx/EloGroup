@@ -11,7 +11,7 @@
 </template>
 
 <script>
-// salvando os metodos que estão dentro da classe Storage dentro do arquivo js
+
 const Storage = require('@/assets/js/storage.js');
 
 export default {
@@ -22,43 +22,55 @@ export default {
     }
   },
   methods: {
+    // Método para realizar o update das posições dos Cards no LocalStorage 
     updatePosition(_id, newPos){
-      
+
       console.log("Updating position: " + _id + " (" + newPos + ")");
       Storage.updateLeadPosition(_id, newPos);
-
-      //atualizar Storage
+      // Invoca o método 'update' utilizado na declaração deste componente, para garantir que a tabela está 
+      // exibindo as mesmas informações que constam no localStorage
       this.$emit('update');
     },
     drop(e){
-      // obtendo o id atraves de uma transferência de dados usando getData
+      // Obtendo o id (Html) do card que está sendo arrasto para o board em questão
+      // através de uma transferência de dados usando getData
       const card_id = e.dataTransfer.getData('card_id');
+      // Obtendo o id (Html) do útlimo board onde o card estavá
+      // através de uma transferência de dados usando getData
       const last_board_id = e.dataTransfer.getData('board_id');
-      //aqui pegamos o elemento do cartão
+      // Aqui pegamos o elemento do card
       let card = document.getElementById(card_id);
       
       if(e.target){
         
-        // row-c-column
+        // Todo id de card é escrito no seguinte formato: {{linha}}-c-{{coluna}}
         let card_id_arr = card_id.split("-");
+        // Todo id de board é escrito no seguinte formato {{linha}}-b-{{coluna}}
         let board_id_arr = e.target.id.split("-");
         let last_board_id_arr = last_board_id.split("-");
-
+        // Váriavel para definir o novo board que o card estará 
+        // Forçando que o board de destino esteja na mesma linha do card 
         let board = document.getElementById(card_id_arr[0] + '-b-'+ board_id_arr[2]);
 
+        // Verifica se o borde antigo está em uma coluna superior ao board atual do card
         if(last_board_id_arr[2] >= board_id_arr[2]){
+          // Faz o card voltar para a posição que ele estavá
           board = document.getElementById(card_id_arr[0] + '-b-'+ last_board_id_arr[2]);
+          // Invoca o método 'erroMessage' utilizado na declaração deste componente, para 
+          // Exibir uma mensagem de erro para o usuário 
           this.$emit('errorMessage');
-          //EXIBIR MENSAGEM DE ERRO FALANDO QUE NÃO PODE VOLTAR
+        
         } else {
-          //Mudou de posição definitivamente
+          // Atualiza o id (Html) com a nova posição do card
           card.id = card_id_arr[0] + '-c-'+ board_id_arr[2];
           let _id = e.dataTransfer.getData('_id');
+          // Atualiza a posição do card no localStorage 
           this.updatePosition(_id, board_id_arr[2]);
         }
 
+        // Adiciona o card em seu novo board 
         board.appendChild(card);
-        // CHAMAR FUNÇÃO QUE ATUALIZA A SITUAÇÃO DO ATUAL
+        
       } 
     }
   },

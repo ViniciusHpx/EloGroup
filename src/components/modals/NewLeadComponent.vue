@@ -11,7 +11,7 @@
       </div>
       <section class ="modal-container-tree">
         <div>
-          <!-- Pegando os valores que o usuário digitar ou escolher-->
+          <!-- Form contendo os campos dos Leads-->
           <form class ="inputs" action="#" onsubmit="return false">
             <label for ="nome">Nome *</label>
             <input v-model = "lead.name" type="text" id ="nome" placeholder="Nome Empresa">
@@ -63,6 +63,7 @@
           </table>
           <button class="save" @click="closeForm()">Fechar</button><br>
           <button class="save" @click="checkErros()">Salvar</button>
+          <!--Componente para exibir dinâmicamente uma mensagem personalizada-->
           <MessageComponent
             v-show="modal.isVisible"
             @close="closeModal"
@@ -78,8 +79,7 @@
   </transition>
 </template>
 
-<script>
-  // importando os componentes para o html 
+<script> 
   import MessageComponent from '@/components/modals/MessageComponent.vue'
   const Storage = require('@/assets/js/storage.js');
 
@@ -88,7 +88,7 @@
       MessageComponent
     },
     data: () => ({
-      // variaveis que serão utilizadas
+      // Váriaveis utilizadas dentro dos metodos e da página atual
       lead: {
         name: '',
         telephone: '',
@@ -108,7 +108,7 @@
       }
     }),
     methods: {
-      //invocando o modal com a mensagem referente as acções do usuário
+      // Invocando modal com a determinada mensagem, sucesso ou erro.
       invokeModal(color,title,message){
         this.modal.color=color;
         this.modal.title=title;
@@ -122,15 +122,15 @@
         // Invoca o método 'close' utilizado na declaração deste componente
         this.$emit('close');
       },
-      //adicionando no local storage utilizando a classe storage criada
       addLead(){
+        // Salvano credencias da empresa no localStorage
         Storage.addLead(this.lead);
         this.invokeModal("green","Sucesso",'Lead "' + this.lead.name + '" criado com sucesso!');
-        //invoa o método 'update' utilizado no leadsView
+        // Atualizando Leads na tabela
         this.$emit('update');
       },
       checkErros(){
-        //Analise de erros e salvando em um array , caso atinja algum deles , salvo em um array e depois mostro na tela
+        // Método para realizar a ánalise dos campos informados pelo usuário e fazer a sua criação 
         let erros = [];
 
         if(!this.lead.name)
